@@ -1,288 +1,181 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IJYE publishes open-access engineering, software, and hardware work from youth makers." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="IJYE is an open-access journal for the engineering work of young builders, researchers, and problem solvers.">
+  <meta name="theme-color" content="#071827">
   <title>IJYE — International Journal of Youth Engineering</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#121417',
-            paper: '#f5f5f2',
-            signal: '#ff4d00',
-            mint: '#95f3ca',
-            cobalt: '#315cff'
-          },
-          fontFamily: {
-            sans: ['Space Grotesk', 'sans-serif'],
-            mono: ['IBM Plex Mono', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    body { background: #f5f5f2; }
-    ::selection { background: #95f3ca; color: #121417; }
-    .grid-field {
-      background-image:
-        linear-gradient(rgba(18,20,23,.065) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(18,20,23,.065) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-    .grid-field-dark {
-      background-image:
-        linear-gradient(rgba(245,245,242,.09) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,245,242,.09) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-    .system-line { background: rgba(18,20,23,.22); }
-    .system-line::after {
-      content: '';
-      position: absolute;
-      width: 7px;
-      height: 7px;
-      background: #ff4d00;
-      border: 2px solid #f5f5f2;
-      border-radius: 9999px;
-      top: -4px;
-      left: 0;
-      animation: signal 3.2s ease-in-out infinite;
-    }
-    @keyframes signal {
-      0%, 100% { left: 0; }
-      50% { left: calc(100% - 7px); }
-    }
-    .track-arrow { transition: transform .2s ease; }
-    .track:hover .track-arrow { transform: translate(4px, -4px); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="font-sans text-ink antialiased">
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-ink/15 bg-paper/95 backdrop-blur">
-    <div class="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:px-10">
-      <a href="#top" class="flex items-baseline gap-3" aria-label="IJYE home">
-        <span class="text-xl font-semibold tracking-tight">IJYE</span>
-        <span class="hidden font-mono text-[10px] uppercase text-ink/55 sm:inline">International Journal<br>of Youth Engineering</span>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="IJYE home">
+        <span class="brand-mark">IJYE<span class="brand-slash">/</span></span>
+        <span class="brand-name">International Journal<br>of Youth Engineering</span>
       </a>
-      <nav class="flex items-center gap-5 text-sm md:gap-8" aria-label="Primary navigation">
-        <a class="hidden hover:text-signal md:block" href="#scope">Aims</a>
-        <a class="hover:text-signal" href="#pipeline">Pipeline</a>
-        <a class="hover:text-signal" href="#eligibility">Eligibility</a>
-        <a class="inline-flex items-center gap-2 border-b border-ink pb-0.5 font-medium" href="#submit">
-          Submit <i data-lucide="arrow-up-right" class="h-4 w-4" aria-hidden="true"></i>
-        </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="Journal/index.html">Journal</a>
+        <a href="#tracks">Tracks</a>
+        <a href="#eligibility">Eligibility</a>
+        <a class="nav-submit" href="#submit">Submit <span aria-hidden="true">↗</span></a>
       </nav>
+      <div class="header-tag">DEEP WORK. BUILT YOUNG.</div>
     </div>
   </header>
 
-  <main id="top">
-    <section class="grid-field border-b border-ink/15 pt-16">
-      <div class="mx-auto grid min-h-[720px] max-w-[1440px] lg:grid-cols-[1.08fr_.92fr]">
-        <div class="flex flex-col justify-center px-5 py-16 md:px-10 md:py-24">
-          <p class="mb-8 flex items-center gap-3 font-mono text-xs uppercase text-ink/60">
-            <span class="h-px w-10 bg-signal"></span>
-            Open engineering archive / 2026
-          </p>
-          <h1 class="max-w-4xl text-[clamp(3.5rem,8.2vw,8.5rem)] font-medium leading-[0.82] tracking-[-0.055em]">
-            Deep work.<br>
-            <span class="text-signal">Built young.</span>
-          </h1>
-          <p class="mt-8 max-w-xl text-xl leading-relaxed text-ink/70 md:text-2xl">
-            Publishing the serious engineering work of youth makers: working software, hardware architecture, and systems worth documenting.
-          </p>
-          <div class="mt-10 flex flex-wrap gap-3">
-            <a href="/Journal" class="inline-flex h-12 items-center gap-3 bg-ink px-5 text-sm font-medium text-paper transition-colors hover:bg-cobalt">
-              View journal <i data-lucide="arrow-up-right" class="h-4 w-4" aria-hidden="true"></i>
-            </a>
-            <a href="#submit" class="inline-flex h-12 items-center gap-3 border border-ink px-5 text-sm font-medium transition-colors hover:bg-mint">
-              View submission criteria
-            </a>
-          </div>
+  <main id="main">
+    <section class="hero blueprint-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> OPEN ENGINEERING ARCHIVE <span class="eyebrow-year">/ 2026</span></p>
+        <h1>Real engineering.<br><span>Young minds.</span></h1>
+        <p class="hero-lede">A home for the serious technical work of young engineers, builders, and problem solvers. We document what was built, how it works, and what the evidence shows.</p>
+        <div class="hero-actions">
+          <a class="button button-orange" href="Journal/index.html">Explore the journal <span aria-hidden="true">→</span></a>
+          <a class="button button-outline" href="#submit">Submission information <span aria-hidden="true">↗</span></a>
         </div>
-
-        <div class="relative hidden min-h-[640px] overflow-hidden border-l border-ink/15 lg:block" aria-label="Engineering architecture diagram">
-          <div class="absolute inset-x-8 top-10 font-mono text-[10px] uppercase text-ink/55">system_map / ijye_v1.0</div>
-          <div class="absolute left-[12%] top-[22%] h-40 w-40 border border-ink bg-paper p-5">
-            <i data-lucide="code-2" class="mb-9 h-6 w-6" aria-hidden="true"></i>
-            <p class="font-mono text-xs">01 / SOFTWARE</p>
-          </div>
-          <div class="absolute right-[10%] top-[38%] h-52 w-52 border border-ink bg-mint p-5">
-            <i data-lucide="cpu" class="mb-16 h-7 w-7" aria-hidden="true"></i>
-            <p class="font-mono text-xs">02 / HARDWARE</p>
-          </div>
-          <div class="absolute bottom-[12%] left-[24%] h-36 w-36 border border-ink bg-cobalt p-5 text-paper">
-            <i data-lucide="scan-line" class="mb-8 h-6 w-6" aria-hidden="true"></i>
-            <p class="font-mono text-xs">03 / PROOF</p>
-          </div>
-          <div class="system-line absolute left-[30%] top-[46%] h-px w-[31%] rotate-[18deg]"></div>
-          <div class="system-line absolute bottom-[25%] left-[31%] h-px w-[38%] -rotate-[12deg]"></div>
-        </div>
+        <div class="hero-footnote"><span class="status-dot"></span> OPEN ACCESS <span class="footnote-divider">/</span> ENGINEERING &amp; SOFTWARE</div>
+      </div>
+      <div class="hero-art" aria-label="Technical line drawing of a robotic arm" role="img">
+        <div class="art-meta art-meta-top">FIG. 001 <span>CONCEPT / SYSTEMS</span></div>
+        <svg class="robot-drawing" viewBox="0 0 600 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <pattern id="smallGrid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" stroke="#168BFA" stroke-opacity=".23" stroke-width=".7"/></pattern>
+            <pattern id="bigGrid" width="120" height="120" patternUnits="userSpaceOnUse"><rect width="120" height="120" fill="url(#smallGrid)"/><path d="M120 0H0V120" stroke="#168BFA" stroke-opacity=".35" stroke-width="1"/></pattern>
+          </defs>
+          <rect width="600" height="520" fill="url(#bigGrid)"/>
+          <g stroke="#168BFA" stroke-width="1" stroke-dasharray="6 7" opacity=".8">
+            <path d="M28 260H574M300 22V495M90 120L500 420M90 420L500 120"/>
+            <circle cx="300" cy="260" r="190"/><circle cx="300" cy="260" r="150"/>
+          </g>
+          <g stroke="#D7F0FF" stroke-width="3" stroke-linejoin="round">
+            <path d="M180 475H398L430 445H153L180 475Z" fill="#0C2A40"/>
+            <path d="M203 445L225 390L307 390L329 445" fill="#0C2A40"/>
+            <path d="M235 390L188 280L245 246L294 352L307 390" fill="#092238"/>
+            <path d="M188 280L270 160L326 180L245 246" fill="#0B2B43"/>
+            <path d="M270 160L383 190L367 226L326 180" fill="#0B2B43"/>
+            <path d="M383 190L435 279L403 300L367 226" fill="#0B2B43"/>
+            <path d="M435 279L462 323L448 335L424 303" />
+            <path d="M462 323L482 352L471 361L448 335"/>
+          </g>
+          <g stroke="#168BFA" stroke-width="2">
+            <circle cx="217" cy="263" r="43" fill="#071827"/><circle cx="217" cy="263" r="30"/><circle cx="217" cy="263" r="12"/>
+            <circle cx="297" cy="172" r="38" fill="#071827"/><circle cx="297" cy="172" r="25"/><circle cx="297" cy="172" r="9"/>
+            <circle cx="385" cy="207" r="28" fill="#071827"/><circle cx="385" cy="207" r="17"/><circle cx="385" cy="207" r="6"/>
+            <path d="M95 320H160M105 330H170M416 125H485M426 135H495" stroke-dasharray="3 4"/>
+          </g>
+          <g stroke="#FF792B" stroke-width="2">
+            <path d="M297 130V75H354"/><path d="M427 284L493 335V390"/><path d="M165 265H98V220"/>
+            <circle cx="354" cy="75" r="4" fill="#FF792B"/><circle cx="493" cy="390" r="4" fill="#FF792B"/><circle cx="98" cy="220" r="4" fill="#FF792B"/>
+          </g>
+          <g fill="#A9D9F9" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.5">
+            <text x="360" y="72">AXIS / 02</text><text x="500" y="405">END EFFECTOR</text><text x="42" y="208">JOINT / A</text>
+            <text x="18" y="500">IJYE // ENGINEERING RECORD</text>
+          </g>
+        </svg>
+        <div class="art-side-note">// BUILD<br>// TEST<br>// IMPROVE<br>// REPEAT</div>
+        <div class="art-meta art-meta-bottom">SCHEMATIC A — NOT TO SCALE <span>IJYE / 001</span></div>
       </div>
     </section>
 
-    <section id="scope" class="border-b border-ink/15">
-      <div class="mx-auto max-w-[1440px] px-5 md:px-10">
-        <div class="grid border-x border-ink/15 md:grid-cols-[.38fr_.62fr]">
-          <div class="border-b border-ink/15 p-6 md:border-b-0 md:border-r md:p-10">
-            <p class="font-mono text-xs uppercase text-ink/55">01 / Aims &amp; scope</p>
-          </div>
-          <div class="p-6 py-12 md:p-12 md:py-20">
-            <h2 class="max-w-4xl text-4xl font-medium leading-tight tracking-[-0.035em] md:text-6xl">
-              Technical work deserves a rigorous public record.
-            </h2>
-            <div class="mt-10 grid gap-8 border-t border-ink/20 pt-8 md:grid-cols-2">
-              <p class="text-lg leading-relaxed text-ink/70">
-                IJYE is an open-access publication for engineering, software, and hardware architectures created by teenagers. We document how the system was conceived, built, tested, and understood.
-              </p>
-              <p class="text-lg leading-relaxed text-ink/70">
-                Our scope favors depth over polish: architecture decisions, implementation traces, experimental evidence, and the lessons that can transfer to the next maker's project.
-              </p>
-            </div>
-          </div>
+    <section class="tracks-section section-pad" id="tracks">
+      <div class="section-intro">
+        <p class="section-index"><span>01</span> / PUBLICATION TRACKS</p>
+        <h2>Two paths.<br>One mission.</h2>
+        <p>Different disciplines. The same commitment to evidence, clarity, and work worth sharing.</p>
+      </div>
+      <a class="track-card haven-card" href="Journal/index.html#haven">
+        <div class="track-icon code-icon">&lt;/&gt;</div>
+        <div class="track-content">
+          <p class="track-kicker">TRACK 01 / SOFTWARE</p>
+          <h3>Haven</h3>
+          <p>Software and game engineering: engines, simulations, developer tools, networked systems, and interactive technologies.</p>
+          <span class="track-link">Explore track <span aria-hidden="true">↗</span></span>
         </div>
+        <span class="track-number">H</span>
+      </a>
+      <a class="track-card fallen-card" href="Journal/index.html#fallen">
+        <div class="track-icon chip-icon">▦</div>
+        <div class="track-content">
+          <p class="track-kicker">TRACK 02 / HARDWARE</p>
+          <h3>Fallen</h3>
+          <p>Hardware engineering: embedded systems, circuits, robotics, sensors, fabrication, and physical architectures.</p>
+          <span class="track-link">Explore track <span aria-hidden="true">↗</span></span>
+        </div>
+        <span class="track-number">F</span>
+      </a>
+    </section>
+
+    <section class="focus-section blueprint-grid-dark">
+      <div class="focus-heading">
+        <p class="section-index light-index"><span>02</span> / EDITORIAL PRINCIPLES</p>
+        <h2>More than credentials.<br><span>It's what you build.</span></h2>
+        <p>IJYE is designed around the work itself: the decisions, iterations, evidence, and learning behind a technical result.</p>
+      </div>
+      <div class="principles">
+        <article class="principle">
+          <div class="principle-icon">⌘</div><p class="principle-num">PRINCIPLE / 01</p><h3>Real projects</h3><p>Show the implementation, constraints, testing, and lessons—not just the final pitch.</p>
+        </article>
+        <article class="principle">
+          <div class="principle-icon">◇</div><p class="principle-num">PRINCIPLE / 02</p><h3>Technical rigor</h3><p>Make methods, design choices, limitations, and evidence understandable to readers.</p>
+        </article>
+        <article class="principle">
+          <div class="principle-icon">◎</div><p class="principle-num">PRINCIPLE / 03</p><h3>Open access</h3><p>Make published work discoverable and useful beyond the person who built it.</p>
+        </article>
+        <article class="principle">
+          <div class="principle-icon">↗</div><p class="principle-num">PRINCIPLE / 04</p><h3>Youth centered</h3><p>Take young contributors seriously and give their work a durable public record.</p>
+        </article>
       </div>
     </section>
 
-    <section class="bg-ink text-paper">
-      <div class="mx-auto grid max-w-[1440px] md:grid-cols-3">
-        <div class="border-b border-paper/15 p-8 md:border-b-0 md:border-r md:p-10">
-          <i data-lucide="terminal" class="h-6 w-6 text-mint" aria-hidden="true"></i>
-          <p class="mt-16 font-mono text-xs uppercase text-paper/45">Format / 01</p>
-          <h3 class="mt-3 text-2xl">Open access</h3>
-          <p class="mt-3 leading-relaxed text-paper/60">Readable without gatekeeping. Fully attributed. Built for reuse.</p>
-        </div>
-        <div class="border-b border-paper/15 p-8 md:border-b-0 md:border-r md:p-10">
-          <i data-lucide="git-branch" class="h-6 w-6 text-mint" aria-hidden="true"></i>
-          <p class="mt-16 font-mono text-xs uppercase text-paper/45">Format / 02</p>
-          <h3 class="mt-3 text-2xl">Architecture first</h3>
-          <p class="mt-3 leading-relaxed text-paper/60">Methods, constraints, tradeoffs, and evidence are part of the record.</p>
-        </div>
-        <div class="p-8 md:p-10">
-          <i data-lucide="boxes" class="h-6 w-6 text-mint" aria-hidden="true"></i>
-          <p class="mt-16 font-mono text-xs uppercase text-paper/45">Format / 03</p>
-          <h3 class="mt-3 text-2xl">Youth-led</h3>
-          <p class="mt-3 leading-relaxed text-paper/60">Teen authors retain ownership of the ideas and expertise they contribute.</p>
-        </div>
+    <section class="eligibility-section section-pad" id="eligibility">
+      <div class="eligibility-stamp">
+        <p class="section-index">03 / ELIGIBILITY</p>
+        <div class="stamp-mark">IJYE<span>/</span></div>
+        <h2>Work is the<br>credential.</h2>
+        <p>THE ENGINEERING RECORD</p>
+      </div>
+      <div class="eligibility-copy">
+        <p class="section-index">HOW SUBMISSION WORKS</p>
+        <h2>Evidence first.<br>Then review.</h2>
+        <p class="eligibility-lede">Submissions should make it possible to understand what was built, why it was built that way, and how the result was evaluated.</p>
+        <ol class="steps">
+          <li><span class="step-num">01</span><div><h3>Document the work</h3><p>Prepare a clear manuscript with the problem, approach, implementation, results, and limitations.</p></div></li>
+          <li><span class="step-num">02</span><div><h3>Include evidence</h3><p>Where relevant, provide a repository, diagrams, test results, demonstrations, or supporting technical material.</p></div></li>
+          <li><span class="step-num">03</span><div><h3>Follow the editorial process</h3><p>Review the current submission requirements and eligibility route before sending your work.</p></div></li>
+        </ol>
+        <p class="small-note"><strong>Editorial note:</strong> Confirm the journal's current eligibility and nomination rules before submission. This draft intentionally avoids promising acceptance or implying that any manuscript has already been peer reviewed.</p>
       </div>
     </section>
 
-    <section id="pipeline" class="grid-field border-b border-ink/15">
-      <div class="mx-auto max-w-[1440px] px-5 py-16 md:px-10 md:py-24">
-        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-          <div>
-            <p class="font-mono text-xs uppercase text-ink/55">02 / Submission pipeline</p>
-            <h2 class="mt-5 max-w-3xl text-4xl font-medium leading-tight tracking-[-0.035em] md:text-6xl">Two tracks. One standard.</h2>
-          </div>
-          <p class="max-w-md text-base leading-relaxed text-ink/65 md:text-right">Exclusive publication tracks for flagship youth engineering programs.</p>
-        </div>
-
-        <div class="mt-12 border-t border-ink">
-          <a href="#submit" class="track group grid border-b border-ink py-8 md:grid-cols-[160px_1fr_180px] md:items-center md:gap-8">
-            <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 items-center justify-center bg-mint font-mono text-xs">H</span>
-              <span class="font-mono text-xs uppercase">Track 01</span>
-            </div>
-            <div>
-              <h3 class="text-3xl font-medium md:text-5xl">Haven</h3>
-              <p class="mt-2 max-w-2xl text-base text-ink/65 md:text-lg">Software &amp; game engineering — systems, engines, interactive simulations, tooling, and networked architectures.</p>
-            </div>
-            <div class="mt-6 flex items-center justify-between font-mono text-xs uppercase md:justify-end md:gap-3">
-              Software <i data-lucide="arrow-up-right" class="track-arrow h-5 w-5" aria-hidden="true"></i>
-            </div>
-          </a>
-          <a href="#submit" class="track group grid border-b border-ink py-8 md:grid-cols-[160px_1fr_180px] md:items-center md:gap-8">
-            <div class="flex items-center gap-3">
-              <span class="flex h-10 w-10 items-center justify-center bg-cobalt font-mono text-xs text-paper">F</span>
-              <span class="font-mono text-xs uppercase">Track 02</span>
-            </div>
-            <div>
-              <h3 class="text-3xl font-medium md:text-5xl">Fallen</h3>
-              <p class="mt-2 max-w-2xl text-base text-ink/65 md:text-lg">Deep hardware — embedded systems, circuits, robotics, fabrication, sensors, and physical architectures.</p>
-            </div>
-            <div class="mt-6 flex items-center justify-between font-mono text-xs uppercase md:justify-end md:gap-3">
-              Hardware <i data-lucide="arrow-up-right" class="track-arrow h-5 w-5" aria-hidden="true"></i>
-            </div>
-          </a>
-        </div>
+    <section class="submit-section blueprint-grid-dark" id="submit">
+      <div>
+        <p class="section-index light-index"><span>04</span> / YOUR WORK, DOCUMENTED</p>
+        <h2>Build something<br><span>worth recording.</span></h2>
+        <p>Prepare your technical story. Start with the submission requirements and make sure your evidence is ready.</p>
       </div>
-    </section>
-
-    <section id="eligibility" class="border-b border-ink/15">
-      <div class="mx-auto grid max-w-[1440px] lg:grid-cols-[.45fr_.55fr]">
-        <div class="grid-field-dark flex min-h-[420px] flex-col justify-between bg-cobalt p-6 text-paper md:p-10">
-          <p class="font-mono text-xs uppercase text-paper/70">03 / Eligibility</p>
-          <div>
-            <div class="mb-5 flex h-16 w-16 items-center justify-center border border-paper/50">
-              <i data-lucide="fingerprint" class="h-8 w-8" aria-hidden="true"></i>
-            </div>
-            <h2 class="max-w-md text-5xl font-medium leading-[0.95] tracking-[-0.04em] md:text-6xl">Work is the credential.</h2>
-          </div>
-        </div>
-        <div class="p-6 py-14 md:p-12 md:py-20">
-          <p class="max-w-2xl text-2xl leading-snug md:text-3xl">
-            Submissions are gated by <span class="bg-mint px-1">proof of work</span> and <span class="bg-mint px-1">program nomination</span>, not institutional affiliation.
-          </p>
-          <ol class="mt-12 border-t border-ink/20">
-            <li class="grid grid-cols-[44px_1fr] gap-4 border-b border-ink/20 py-6">
-              <span class="font-mono text-xs text-signal">01</span>
-              <div>
-                <h3 class="text-lg font-medium">Demonstrate the build</h3>
-                <p class="mt-2 text-ink/65">Submit a reproducible artifact, repository, demonstration, or technical evidence of implementation.</p>
-              </div>
-            </li>
-            <li class="grid grid-cols-[44px_1fr] gap-4 border-b border-ink/20 py-6">
-              <span class="font-mono text-xs text-signal">02</span>
-              <div>
-                <h3 class="text-lg font-medium">Receive program nomination</h3>
-                <p class="mt-2 text-ink/65">Your work must be nominated through Haven or Fallen, as determined by the participating program.</p>
-              </div>
-            </li>
-            <li class="grid grid-cols-[44px_1fr] gap-4 border-b border-ink/20 py-6">
-              <span class="font-mono text-xs text-signal">03</span>
-              <div>
-                <h3 class="text-lg font-medium">Enter peer review</h3>
-                <p class="mt-2 text-ink/65">Eligible manuscripts are assessed for technical depth, reproducibility, clarity, and architectural rigor.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section id="submit" class="grid-field-dark bg-ink text-paper">
-      <div class="mx-auto max-w-[1440px] px-5 py-16 md:px-10 md:py-24">
-        <div class="grid gap-12 md:grid-cols-[1fr_auto] md:items-end">
-          <div>
-            <p class="font-mono text-xs uppercase text-mint">Ready for review</p>
-            <h2 class="mt-5 max-w-4xl text-5xl font-medium leading-[0.95] tracking-[-0.04em] md:text-7xl">Document what you built.</h2>
-          </div>
-          <a href="mailto:submissions@ijye.org" class="inline-flex h-14 items-center justify-center gap-3 bg-mint px-6 font-medium text-ink transition-colors hover:bg-paper">
-            Begin submission <i data-lucide="send" class="h-4 w-4" aria-hidden="true"></i>
-          </a>
-        </div>
+      <div class="submit-actions">
+        <a class="button button-orange" href="mailto:submissions@ijye.org?subject=IJYE%20submission%20inquiry">Contact submissions <span aria-hidden="true">↗</span></a>
+        <a class="text-link-light" href="Journal/index.html">Browse journal archive <span aria-hidden="true">→</span></a>
+        <p class="small-note light-note">The submission email is carried over from the current draft. Verify that it is active before launch.</p>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-paper/15 bg-ink text-paper">
-    <div class="mx-auto flex max-w-[1440px] flex-col gap-6 px-5 py-8 font-mono text-[10px] uppercase text-paper/50 md:flex-row md:items-center md:justify-between md:px-10">
-      <p>© 2026 International Journal of Youth Engineering</p>
-      <p>Open access / peer reviewed / youth led</p>
+  <footer class="site-footer">
+    <div class="footer-main">
+      <a class="brand footer-brand" href="index.html"><span class="brand-mark">IJYE<span class="brand-slash">/</span></span><span class="brand-name">International Journal<br>of Youth Engineering</span></a>
+      <p class="footer-motto">DEEP WORK.<br>BUILT YOUNG.</p>
     </div>
+    <div class="footer-bottom"><span>© 2026 IJYE — International Journal of Youth Engineering</span><span>OPEN ACCESS <i></i> ENGINEERING RECORD</span></div>
   </footer>
-
-  <script>
-    lucide.createIcons();
-  </script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
