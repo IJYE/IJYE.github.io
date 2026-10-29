@@ -20,7 +20,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="IJYE home"><span class="brand-mark">IJYE<span class="brand-slash">/</span></span><span class="brand-name">International Journal<br>of Youth Engineering</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button><nav class="site-nav" id="site-nav" aria-label="Main navigation"><a href="../index.html">Home</a><a href="../Journal/index.html">Journal</a><a href="../index.html#tracks">Engineering areas</a><a class="active" href="index.html">Submissions</a></nav><div class="header-tag">DEEP WORK. BUILT YOUNG.</div></div></header>
 <main id="main">
-<section class="submit-hero blueprint-grid-dark"><p class="section-index light-index"><span>SUBMISSIONS / 01</span> — AUTHOR INTAKE</p><h1>Put the work<br><span>on the record.</span></h1><p class="lede">IJYE's submission process is designed to document serious software and hardware engineering. Authors provide a manuscript and supporting evidence so editors can understand what was built, how it works, and how it was evaluated.</p><div class="intake-status"><span class="status-dot"></span> HOSTED INTAKE FORM NOT YET CONNECTED</div></section>
+<section class="submit-hero blueprint-grid-dark"><p class="section-index light-index"><span>SUBMISSIONS / 01</span> — AUTHOR INTAKE</p><h1>Put the work<br><span>on the record.</span></h1><p class="lede">IJYE's submission process is designed to document serious software and hardware engineering. Authors provide a manuscript and supporting evidence so editors can understand what was built, how it works, and how it was evaluated.</p><div class="intake-status"><span class="status-dot"></span> HOSTED INTAKE FORM CONNECTED</div></section>
 <section class="section-pad submit-body">
 <div class="submit-heading"><p class="section-index"><span>01</span> / SELECT YOUR PATHWAY</p><h2>Four routes.<br>One editorial standard.</h2><p>Choose the route that matches your project and its intended program. Pathway labels describe planned intake routes; they do not by themselves establish endorsement, sponsorship, or formal affiliation.</p></div>
 <div class="submit-pathways">
@@ -45,11 +45,36 @@
 <li><strong>Permission:</strong> ensure you may share all files and remove passwords, API keys, private data, and secrets.</li>
 </ul></div>
 <div class="submit-form-panel" id="hosted-form"><p class="section-index"><span>04</span> / OFFICIAL INTAKE</p><h2>Ready to submit?</h2><p>The intake will use a hosted form that accepts a PDF manuscript, optional supporting-file uploads, and repository or demonstration links. The form must be connected and tested before IJYE can accept submissions.</p>
-<div class="form-state"><span class="state-icon" aria-hidden="true">!</span><div><strong>Form integration pending</strong><p>This page is not yet accepting manuscripts. A hosted-form URL, upload settings, and destination for submissions must be configured first. Do not send unpublished or sensitive files to an unverified address.</p></div></div>
-<p class="small-note light-note" style="margin-top:1.3rem">Planned fields: corresponding author and contact details, selected pathway, title and abstract, PDF manuscript, optional supporting files, project links, contribution and attribution declarations, and permission to contact the author.</p></div></div>
+<div class="tally-embed" style="margin-top:1.5rem;background:#fff;border-radius:4px;overflow:hidden">
+<iframe data-tally-src="https://tally.so/embed/5XXYKQ?alignLeft=1&transparentBackground=1&dynamicHeight=1" loading="lazy" title="IJYE Submission Form" style="width:100%;height:5032px;border:0;display:block" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+</div>
+<p class="small-note light-note" style="margin-top:1.3rem">Please review your answers before submitting. Submission does not guarantee acceptance or publication.</p></div></div>
 <div class="submit-note"><strong>Editorial transparency:</strong> Before opening intake, publish eligibility and nomination rules, the review model, expected timelines, data-handling and retention practices, publication license, and revision or appeals process. Do not promise peer review or acceptance until those procedures are established.</div>
 <div class="archive-bottom-cta"><div><p class="section-index">BACK TO IJYE</p><h2>Explore published work.</h2></div><a class="button button-orange" href="../Journal/index.html">View journal archive <span aria-hidden="true">→</span></a></div></section>
 </main>
 <footer class="site-footer"><div class="footer-main"><a class="brand footer-brand" href="../index.html"><span class="brand-mark">IJYE<span class="brand-slash">/</span></span><span class="brand-name">International Journal<br>of Youth Engineering</span></a><p class="footer-motto">DEEP WORK.<br>BUILT YOUNG.</p></div><div class="footer-bottom"><span>© 2026 IJYE — International Journal of Youth Engineering</span><span>ENGINEERING JOURNAL <i></i> SUBMISSIONS</span></div></footer>
 <script src="../assets/app.js"></script>
+<script>
+(function () {
+  var d = document, w = "https://tally.so/widgets/embed.js";
+  var loadTally = function () {
+    if (typeof Tally !== "undefined") {
+      Tally.loadEmbeds();
+    } else {
+      d.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function (frame) {
+        frame.src = frame.dataset.tallySrc;
+      });
+    }
+  };
+  if (typeof Tally !== "undefined") {
+    loadTally();
+  } else if (!d.querySelector('script[src="' + w + '"]')) {
+    var s = d.createElement("script");
+    s.src = w;
+    s.onload = loadTally;
+    s.onerror = loadTally;
+    d.body.appendChild(s);
+  }
+})();
+</script>
 </body></html>
