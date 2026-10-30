@@ -1,5 +1,5 @@
 /* IJYE — The Engineering Record
-   Design tokens and shared components for the static GitHub Pages draft. */
+   Design tokens and shared components for the static GitHub Pages site. */
 :root {
   --navy: #071827;
   --navy-2: #0b2235;
@@ -127,6 +127,16 @@ h1, h2, h3, p { margin-top: 0; }
 .footer-motto { color: #71c5ff; font: .68rem/1.7 var(--font-mono); letter-spacing: .15em; text-align: right; margin: 0; }
 .footer-bottom { border-top: 1px solid var(--line-light); padding-top: 1.2rem; display: flex; justify-content: space-between; gap: 1rem; color: #7790a3; font: .58rem var(--font-mono); letter-spacing: .08em; }
 .footer-bottom i { display: inline-block; width: 5px; height: 5px; background: var(--orange); border-radius: 50%; vertical-align: middle; margin: 0 .5rem; }
+.footer-policy-links { display: flex; flex-wrap: wrap; gap: 1.25rem; padding: 0 0 1.2rem; }
+.footer-policy-links a { color: #b9d8ec; font: .62rem var(--font-mono); text-decoration: none; }
+.footer-policy-links a:hover, .footer-policy-links a:focus-visible { color: var(--orange); }
+.policy-hero h1 { max-width: 900px; }
+.policy-content { max-width: 1000px; margin: 0 auto; padding-top: 3rem; }
+.policy-content > p, .policy-content section p { color: #40586c; font-size: .95rem; line-height: 1.8; }
+.policy-content section { margin-top: 2.5rem; }
+.policy-content h2 { font: 700 1.65rem/1.2 var(--font-display); letter-spacing: -.03em; margin-bottom: .8rem; }
+.policy-content a { color: #0878db; }
+.policy-updated { font: 500 .68rem var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) !important; }
 /* Journal archive */
 .archive-hero { padding: clamp(4rem, 9vw, 8rem) max(5.2%, calc((100vw - var(--content))/2)); }
 .archive-hero h1 { font: 700 clamp(3rem, 7vw, 6.5rem)/.98 var(--font-display); letter-spacing: -.065em; margin: 2rem 0 1.5rem; }
@@ -199,6 +209,8 @@ h1, h2, h3, p { margin-top: 0; }
   .archive-topline { align-items: flex-start; flex-direction: column; gap: .2rem; }
   .archive-count { font-size: .5rem; }
   .archive-bottom-cta { align-items: flex-start; flex-direction: column; }
+  .submission-page { padding: 3rem 6%; }
+  .form-shell iframe { height: 88rem; }
 }
 @media (max-width: 420px) {
   .brand-name { display: none; }
@@ -223,6 +235,17 @@ h1, h2, h3, p { margin-top: 0; }
 .soti-icon { color: var(--teal); font: 700 1.2rem var(--font-display); }
 .pathway-disclaimer { grid-column: 2 / -1; margin: -.2rem 0 0; color: #6b7e8e; font-size: .75rem; line-height: 1.7; }
 .hero-art .robot-drawing { object-fit: contain; object-position: center; inset: 0; width: 100%; height: 100%; padding: 1.5rem; mix-blend-mode: screen; }
+.submission-page { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) 2rem 5rem; }
+.submission-intro { margin-bottom: 2rem; }
+.submission-intro .section-index { margin-bottom: .8rem; }
+.submission-intro h1 { font: 700 clamp(2.8rem, 6vw, 5rem)/1 var(--font-display); letter-spacing: -.06em; margin-bottom: 1rem; }
+.submission-intro h1 span { color: var(--blue); }
+.submission-intro > p:not(.section-index) { max-width: 760px; color: var(--muted); line-height: 1.75; }
+.submission-disclaimer { font-size: .85rem; }
+.form-shell { background: white; border: 1px solid #d2dde5; overflow: hidden; box-shadow: 0 12px 40px rgba(7,24,39,.08); }
+.form-shell iframe { display: block; width: 100%; height: 80rem; border: 0; background: white; }
+.form-footnote { margin: 1rem 0 0; color: var(--muted); font-size: .82rem; line-height: 1.65; }
+.form-footnote a { color: #0878db; }
 @media (max-width: 1100px) {
   .pathways-section { grid-template-columns: 1fr 1fr; }
   .pathways-section .section-intro { grid-column: 1 / -1; }
